@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Motors Payment Gateway</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-option {
+            margin: 10px 0;
+        }
+        .payment-option label {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .payment-methods img {
+            width: 50px;
+            margin-right: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .payment-success {
+            text-align: center;
+            padding: 50px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .payment-failed {
+            text-align: center;
+            padding: 50px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Tata Re-engineered Mobility Payment Gateway</h2>
+    <form id="paymentForm" action="/process_payment" method="POST">
+
+        <div class="payment-option">
+            <label for="upi">UPI ID:</label>
+            <input type="text" id="upi" name="upi_id" placeholder="Enter UPI ID" required>
+        </div>
+
+        <div class="payment-option">
+            <label>Choose Payment Method:</label>
+            <div class="payment-methods">
+                <input type="radio" id="googlePay" name="payment_method" value="googlePay">
+                <label for="googlePay"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVO9LUWF81Ov6LZR50eDNu5rNFCpkn0LwYQ&s" alt="Google Pay"></label>
+
+                <input type="radio" id="creditCard" name="payment_method" value="creditCard">
+                <label for="creditCard"><img src="https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-credit-card-icon-png-image_1025464.jpg" alt="Credit Card"></label>
+
+                <input type="radio" id="debitCard" name="payment_method" value="debitCard">
+                <label for="debitCard"><img src="https://w7.pngwing.com/pngs/924/607/png-transparent-mastercard-credit-card-business-debit-card-logo-mastercard-text-service-orange-thumbnail.png" alt="Debit Card"></label>
+
+                <input type="radio" id="phonePe" name="payment_method" value="phonePe">
+                <label for="phonePe"><img src="https://static.vecteezy.com/system/resources/previews/049/116/753/non_2x/phonepe-app-icon-transparent-background-free-png.png" alt="PhonePe"></label>
+
+                <input type="radio" id="paytm" name="payment_method" value="paytm">
+                <label for="paytm"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtzgoGnOSSiaow6ecaZ7aUUVU6BcIIAW4p3Q&s" alt="Paytm"></label>
+            </div>
+        </div>
+
+        <div class="payment-option" id="cardDetails" style="display:none;">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="card_number" placeholder="Enter card number" required>
+
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" id="expiryDate" name="expiry_date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+        </div>
+
+        <button type="submit">Proceed to Payment</button>
+    </form>
+</div>
+
+<div id="paymentSuccess" class="payment-success" style="display:none;">
+    <h2>Payment Successful!</h2>
+    <p>Your payment has been successfully processed.</p>
+    <p>Thank you for choosing Tata Motors.</p>
+</div>
+
+<div id="paymentFailed" class="payment-failed" style="display:none;">
+    <h2>Payment Failed</h2>
+    <p>There was an error with your payment. Please try again.</p>
+</div>
+
+<script>
+    document.querySelectorAll('input[name="payment_method"]').forEach((elem) => {
+        elem.addEventListener('change', function() {
+            const cardDetails = document.getElementById('cardDetails');
+            if (this.value === 'creditCard' || this.value === 'debitCard') {
+                cardDetails.style.display = 'block';
+            } else {
+                cardDetails.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        setTimeout(function() {
+            const paymentSuccess = true;
+
+            if (paymentSuccess) {
+                document.getElementById('paymentSuccess').style.display = 'block';
+                document.getElementById('paymentFailed').style.display = 'none';
+            } else {
+                document.getElementById('paymentSuccess').style.display = 'none';
+                document.getElementById('paymentFailed').style.display = 'block';
+            }
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0078d7;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #0078d7;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.bus-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.bus-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.bus-info {
+    max-width: 500px;
+    margin-left: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bus-info h2 {
+    margin-bottom: 20px;
+}
+
+.variants {
+    margin-top: 30px;
+}
+
+select {
+    padding: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.variant-details {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #ccc;
+}

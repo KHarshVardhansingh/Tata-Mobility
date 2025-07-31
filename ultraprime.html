@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Ultra Prime - Details</title>
+    <link rel="stylesheet" href="ultraprime.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Tata Ultra Prime</h1>
+        <p>Discover the Power and Performance</p>
+    </header>
+
+    <!-- Vehicle Details Section -->
+    <section class="vehicle-details">
+
+        <div class="image-gallery">
+            <img id="mainImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3bS1sl6UK6GPZvXK7deenvtHYi-MJrzysYg&s" alt="Ultra Prime" width="500">
+            <div class="color-options">
+                <button onclick="changeColor('red')">Red</button>
+                <button onclick="changeColor('blue')">Blue</button>
+                <button onclick="changeColor('white')">White</button>
+            </div>
+        </div>
+
+        <div class="specifications">
+            <h2>Specifications</h2>
+            <ul>
+                <li><strong>Model:</strong> Ultra Prime 2025</li>
+                <li><strong>Fuel Type:</strong> Diesel</li>
+                <li><strong>Variants:</strong> Standard | Plus | Premium</li>
+                <li><strong>Engine:</strong> 5000cc Turbocharged Diesel</li>
+                <li><strong>Torque:</strong> 850 Nm</li>
+                <li><strong>Power:</strong> 250 HP</li>
+                <li><strong>Transmission:</strong> 6-Speed Manual</li>
+                <li><strong>Top Speed:</strong> 120 km/h</li>
+            </ul>
+
+            <a href="book.html" class="btn-book">Book Now</a>
+        </div>
+
+    </section>
+
+    <!-- JavaScript for Color Change -->
+    <script>
+        function changeColor(color) {
+            const mainImage = document.getElementById('mainImage');
+            if (color === 'red') {
+                mainImage.src = 'https://dummyimage.com/500x300/ff0000/ffffff&text=Ultra+Prime+Red';
+            } else if (color === 'blue') {
+                mainImage.src = 'https://dummyimage.com/500x300/0000ff/ffffff&text=Ultra+Prime+Blue';
+            } else if (color === 'white') {
+                mainImage.src = 'https://dummyimage.com/500x300/ffffff/000000&text=Ultra+Prime+White';
+            }
+        }
+    </script>
+
+</body>
+</html>

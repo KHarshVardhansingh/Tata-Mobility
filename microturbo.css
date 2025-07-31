@@ -1,0 +1,71 @@
+/* microturbo.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.vehicle-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicle-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.vehicle-info {
+    max-width: 600px;
+}
+
+.vehicle-info h2, .vehicle-info h3 {
+    color: #0077b6;
+}
+
+.vehicle-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vehicle-info ul li {
+    background: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0077b6;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #005f87;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}

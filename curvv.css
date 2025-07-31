@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 10px 0;
+}
+
+.curvv-details {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin: 30px;
+    gap: 40px;
+}
+
+.curvv-specs {
+    max-width: 500px;
+}
+
+.curvv-specs h2 {
+    color: #003366;
+}
+
+.curvv-specs p {
+    margin: 8px 0;
+}
+
+.color-selection button {
+    margin-right: 10px;
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-selection button:hover {
+    background-color: #0055a5;
+}

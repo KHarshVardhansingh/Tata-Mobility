@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Punch Details</title>
+    <link rel="stylesheet" href="punch.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tata Punch - Full Details</h1>
+    </header>
+
+    <section class="main-details">
+        <div class="car-image">
+            <img src="https://www.carbike360.com/_next/image?url=https%3A%2F%2Fd2uqhpl0gyo7mc.cloudfront.net%2FPUNCH_da8df78e7c.jpg&w=3840&q=75" alt="Tata Punch" width="400">
+        </div>
+
+        <div class="car-specs">
+            <h2>Overview</h2>
+            <ul>
+                <li><strong>Model:</strong> Tata Punch</li>
+                <li><strong>Fuel Type:</strong> Petrol / CNG</li>
+                <li><strong>Variants:</strong> Pure, Adventure, Accomplished, Creative</li>
+                <li><strong>Engine:</strong> 1.2L Revotron Engine</li>
+                <li><strong>Torque:</strong> 113 Nm</li>
+                <li><strong>Power:</strong> 86 PS</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="color-options">
+        <h2>Available Colors</h2>
+        <div class="colors">
+            <div class="color" style="background-color: white;">White</div>
+            <div class="color" style="background-color: orange;">Orange</div>
+            <div class="color" style="background-color: red;">Red</div>
+            <div class="color" style="background-color: blue;">Blue</div>
+            <div class="color" style="background-color: grey;">Grey</div>
+        </div>
+    </section>
+
+    <section class="variant-selector">
+        <h2>Choose Your Variant</h2>
+        <select id="variantSelect" onchange="showVariantDetails()">
+            <option value="">Select Variant</option>
+            <option value="pure">Pure</option>
+            <option value="adventure">Adventure</option>
+            <option value="accomplished">Accomplished</option>
+            <option value="creative">Creative</option>
+        </select>
+
+        <div id="variantDetails" class="variant-details">
+        </div>
+    </section>
+
+    <script src="punch.js"></script>
+
+</body>
+</html>

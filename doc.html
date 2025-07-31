@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Upload Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f2f2f2;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    input[type="file"], input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .preview {
+      margin-top: 10px;
+      max-height: 150px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Upload Your Documents</h2>
+  <form id="uploadForm">
+
+    <label for="aadhar">Aadhaar Card Photo:</label>
+    <input type="file" id="aadhar" accept="image/*" onchange="previewImage(event, 'aadharPreview')">
+    <img id="aadharPreview" class="preview" src="#" alt="Aadhaar Preview" style="display:none;">
+
+    <label for="pan">PAN Card Photo:</label>
+    <input type="file" id="pan" accept="image/*" onchange="previewImage(event, 'panPreview')">
+    <img id="panPreview" class="preview" src="#" alt="PAN Preview" style="display:none;">
+
+    <label for="signature">Signature:</label>
+    <input type="file" id="signature" accept="image/*" onchange="previewImage(event, 'signaturePreview')">
+    <img id="signaturePreview" class="preview" src="#" alt="Signature Preview" style="display:none;">
+
+    <label for="accountNumber">Bank Account Number:</label>
+    <input type="text" id="accountNumber" placeholder="Enter Bank Account Number">
+
+    <label for="ifsc">IFSC Code:</label>
+    <input type="text" id="ifsc" placeholder="Enter IFSC Code">
+
+    <button type="button" onclick="submitForm()"><a href="payment.html">Submit</button></a>
+
+  </form>
+</div>
+
+<script>
+  function previewImage(event, previewId) {
+    const input = event.target;
+    const reader = new FileReader();
+    reader.onload = function(){
+      const img = document.getElementById(previewId);
+      img.src = reader.result;
+      img.style.display = "block";
+    };
+    if(input.files[0]){
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function submitForm() {
+    const aadhar = document.getElementById('aadhar').files.length;
+    const pan = document.getElementById('pan').files.length;
+    const signature = document.getElementById('signature').files.length;
+    const accountNumber = document.getElementById('accountNumber').value.trim();
+    const ifsc = document.getElementById('ifsc').value.trim();
+
+    if (!aadhar || !pan || !signature || !accountNumber || !ifsc) {
+      alert("Please fill all fields and upload all documents.");
+      return;
+    }
+
+    alert("Documents submitted successfully!");
+  }
+</script>
+
+</body>
+</html>

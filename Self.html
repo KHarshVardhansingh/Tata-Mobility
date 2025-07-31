@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Vehicle Booking</title>
+    <link rel="stylesheet" href="Self.css">
+</head>
+<body>
+    <header>
+        <h1>Tata Vehicle Booking</h1>
+        <p>Book a Tata vehicle for testing or self-drive today!</p>
+    </header>
+
+    <div class="booking-form">
+        <h2>Book Your Test or Self-Drive</h2>
+        <form id="bookingForm">
+            <label for="vehicleModel">Select Vehicle Model:</label>
+            <select id="vehicleModel" required>
+                <option value="">Select a model</option>
+                <option value="Tata Nexon">Tata Nexon</option>
+                <option value="Tata Altroz">Tata Altroz</option>
+                <option value="Tata Harrier">Tata Harrier</option>
+                <option value="Tata Safari">Tata Safari</option>
+            </select>
+
+            <label for="bookingType">Booking Type:</label>
+            <select id="bookingType" required>
+                <option value="">Select booking type</option>
+                <option value="Test Drive">Test Drive</option>
+                <option value="Self Drive">Self Drive</option>
+            </select>
+
+            <label for="pickupDate">Pick-up Date:</label>
+            <input type="date" id="pickupDate" required>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" placeholder="Enter your contact number" required>
+
+            <button type="submit"><a href="city.html">Book Now</button></a>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <h3>Your Booking is Confirmed!</h3>
+            <p id="confirmationDetails"></p>
+        </div>
+    </div>
+
+    <script src="Self.js"></script>
+</body>
+</html>

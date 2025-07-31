@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Bus Details</title>
+    <link rel="stylesheet" href="transport.css">
+</head>
+<body>
+    <header>
+        <h1>Tata Transport Bus Details</h1>
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </header>
+
+    <section class="bus-details">
+        <div class="bus-image">
+            <img src="https://wagenclub.com/wp-content/uploads/2022/06/a4e0a-tata2bultra2belectric_autoexpo_wagenclub2b252852529.jpg" alt="Tata Transport Bus">
+        </div>
+
+        <div class="bus-info">
+            <h2>Model: Tata Ultra Electric</h2>
+            <p><strong>Colors Available:</strong> White, Grey, Blue</p>
+            <p><strong>Fuel Type:</strong> Electric / Diesel</p>
+            <p><strong>Variants:</strong> Standard | Premium | Deluxe</p>
+            <p><strong>Engine:</strong> 2956cc Turbocharged Diesel / Electric Motor</p>
+            <p><strong>Torque:</strong> 300 Nm @ 1200-2200 rpm</p>
+            <p><strong>Power:</strong> 180 HP</p>
+        </div>
+
+        <div class="variants">
+            <h3>Choose Variant:</h3>
+            <select id="variantSelect" onchange="updateVariantDetails()">
+                <option value="Standard">Standard</option>
+                <option value="Premium">Premium</option>
+                <option value="Deluxe">Deluxe</option>
+            </select>
+            <div id="variantDetails" class="variant-details">
+                <p>Select a variant to see features.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="transport.js"></script>
+</body>
+</html>

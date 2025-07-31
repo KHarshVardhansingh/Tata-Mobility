@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tata Nexon - Tata Re-Engineered</title>
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Buy Tata Nexon</h1>
+        <div class="car-image">
+            <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon/9977/1683047876204/front-left-side-47.jpg" alt="Tata Nexon">
+        </div>
+
+        <form id="buyForm">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required pattern="[0-9]{10}">
+            </div>
+
+            <div class="form-group">
+                <label for="variant">Choose Variant:</label>
+                <select id="variant" required>
+                    <option value="">Select Variant</option>
+                    <option value="Nexon Smart">Nexon Smart</option>
+                    <option value="Nexon Pure">Nexon Pure</option>
+                    <option value="Nexon Creative">Nexon Creative</option>
+                    <option value="Nexon Fearless">Nexon Fearless</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Preferred Color:</label>
+                <input type="text" id="color" placeholder="Eg: White, Grey, Blue" required>
+            </div>
+
+            <div class="form-group">
+               <button type="submit" class="submit-btn"> <a href="doc.html">Confirm Booking</a></button>
+            </div>
+        </form>
+    </div>
+
+    <script src="buy.js"></script>
+
+</body>
+</html>

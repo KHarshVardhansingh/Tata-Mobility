@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tata Motors - Vehicle Booking</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: #003366;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;    
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 20px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background-color: #00509e;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: #003366;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Form Styles */
+    .container {
+      width: 50%;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #00509e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn">Vehicles 
+        ▼
+      </button>
+      <div class="dropdown-content">
+        <a href="#">SUV</a>
+        <a href="#">Sedan</a>
+        <a href="#">EV</a>
+        <a href="#">Commercial</a>
+      </div>
+    </div> 
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="container">
+    <h2>Tata Motors Vehicle Booking Form</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="vehicle">Select Vehicle</label>
+        <select id="vehicle" required>
+          <option value="">-- Choose a vehicle --</option>
+          <option value="Nexon">Nexon</option>
+          <option value="Harrier">Harrier</option>
+          <option value="Safari">Safari</option>
+          <option value="Tiago EV">Tiago EV</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Preferred Booking Date</label>
+        <input type="date" id="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Preferred Time</label>
+        <input type="time" id="time" required />
+      </div>
+
+      <div class="form-group">
+        <a href="city.html"><input type="submit" value="Book Now" /></a>
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript for Form Submission -->
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const vehicle = document.getElementById("vehicle").value;
+      alert(`Thank you ${name}! Your booking for ${vehicle} has been submitted.`);
+    });
+  </script>
+</body>
+</html>
